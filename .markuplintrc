@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "markuplint:recommended"
+  ],
+  "parser":{
+    ".pug$": "@markuplint/pug-parser"
+  },
+  "nodeRules": [
+    {
+      "selector": "img",
+      "rules": {
+        "required-attr": [
+          "src",
+          "alt"
+        ]
+      }
+    }
+  ]
+}
