@@ -1,0 +1,28 @@
+@mixin focus-with-keyboard {
+  html[data-whatintent="keyboard"] &:focus {
+    @content;
+  }
+}
+
+@mixin focus-without-keyboard {
+  html[data-whatintent="mouse"] &:focus,
+  html[data-whatintent="touch"] &:focus {
+    @content;
+  }
+}
+
+@mixin hover-with-touch {
+  html[data-whatintent="touch"] &:not(:disabled):hover,
+  html[data-whatintent="touch"] &:not(.-disabled):hover {
+    @content;
+  }
+}
+
+@mixin hover-without-touch {
+  html[data-whatintent="mouse"] &:not(:disabled):hover,
+  html[data-whatintent="mouse"] &:not(.-disabled):hover,
+  html[data-whatintent="keyboard"] &:not(:disabled):hover,
+  html[data-whatintent="keyboard"] &:not(.-disabled):hover {
+    @content;
+  }
+}

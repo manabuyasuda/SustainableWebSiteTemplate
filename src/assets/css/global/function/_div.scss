@@ -1,0 +1,12 @@
+@use "sass:math";
+
+// @desc - `sass:math`の割り算をラップします。
+// @param {Number} $value1 - 分母のピクセル値。
+// @param {Number} $value2 - 分子のピクセル値。
+// @example - div(24, 16) => 1.5
+// @example - div(24px, 16px) => 1.5
+// @example - div(24rem, 16rem) => 1.5
+// @example - div(24rem, 16px) => Error: 1.5rem/px isn't a valid CSS value.
+@function div($value1, $value2) {
+  @return math.div($value1, $value2);
+}

@@ -1,0 +1,8 @@
+@mixin LinkText() {
+  text-decoration: underline;
+  color: #1e88e5;
+
+  html:not([data-whatintent="touch"]) &:hover {
+    text-decoration: none;
+  }
+}

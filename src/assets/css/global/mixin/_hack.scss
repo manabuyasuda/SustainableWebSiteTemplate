@@ -1,0 +1,183 @@
+// @desc - IE11だけを指定します。
+// @example scss - Usage
+// .ie {
+//   @include onlyIE() {
+//     color: red;
+//   }
+// }
+// @example css - CSS output
+// _:-ms-fullscreen, :root .ie {
+//   color: red
+// }
+@mixin onlyIE() {
+  @at-root _:-ms-fullscreen,
+    :root & {
+    @content;
+  }
+}
+
+// @desc - Chromium Edgeを指定します。Windows10はレガシーEdgeからChromiumに自動リプレースされています。
+// @link https://news.mynavi.jp/article/20210206-1701417/
+// @example scss - Usage
+// .edge {
+//   @include onlyEdge() {
+//     color: red;
+//     @include mq(md) {
+//       color: blue;
+//     }
+//   }
+// }
+// @example css - CSS output
+// _:lang(_), _::-ms-value, _::-internal-media-controls-overlay-cast-button, .edge {
+//   color: red
+// }
+// @media print, screen and (min-width:48em) {
+//   _:lang(_), _::-ms-value, _::-internal-media-controls-overlay-cast-button, .edge {
+//     color: #00f
+//   }
+// }
+@mixin onlyEdge() {
+  @at-root _:lang(_),
+    _::-ms-value,
+    _::-internal-media-controls-overlay-cast-button,
+    & {
+    @content;
+  }
+}
+
+// @desc - レガシー版Edgeを指定します。Windows10はレガシーEdgeからChromiumに自動リプレースされています。
+// @link https://news.mynavi.jp/article/20210206-1701417/
+// @example scss - Usage
+// .legacyEdge {
+//   @include onlyLegacyEdge() {
+//     color: red;
+//     @include mq(md) {
+//       color: blue;
+//     }
+//   }
+// }
+// @example css - CSS output
+// @supports (-ms-ime-align:auto) {
+//   .legacyEdge {
+//     color: red
+//   }
+//   @media print, screen and (min-width:48em) {
+//     .legacyEdge {
+//       color: #00f
+//     }
+//   }
+// }
+@mixin onlyLegacyEdge() {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+// @desc - Safari9以上を指定します。
+// @example scss - Usage
+// .safari {
+//   @include onlySafari() {
+//     color: red;
+//     @include mq(md) {
+//       color: blue;
+//     }
+//   }
+// }
+// @example css - CSS output
+// _::-webkit-full-page-media, _:future, :root .safari {
+//   color: red
+// }
+// @media print, screen and (min-width:48em) {
+//   _::-webkit-full-page-media, _:future, :root .safari {
+//     color: #00f
+//   }
+// }
+@mixin onlySafari() {
+  @at-root _::-webkit-full-page-media,
+    _:future,
+    :root & {
+    @content;
+  }
+}
+
+// @desc - iOSのSafari9以上を指定します。
+// @example scss - Usage
+// .iosSafari {
+//   @include onlyIosSafari() {
+//     color: red;
+//     @include mq(md) {
+//       color: blue;
+//     }
+//   }
+// }
+// @example css - CSS output
+// @supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)) {
+//   .iosSafari {
+//     color: red
+//   }
+//   @media print, screen and (min-width:48em) {
+//     .iosSafari {
+//       color: #00f
+//     }
+//   }
+// }
+@mixin onlyIosSafari() {
+  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true)) and
+    (not (-moz-appearance: none)) {
+    @content;
+  }
+}
+
+// @desc - 全バージョンのFirefoxを指定します。
+// @example scss - Usage
+// .firefox {
+//   @include onlyFirefox() {
+//     color: red;
+//     @include mq(md) {
+//       color: blue;
+//     }
+//   }
+// }
+// @example css - CSS output
+// @-moz-document url-prefix() {
+//   .firefox {
+//     color: red
+//   }
+//   @media print, screen and (min-width:48em) {
+//     .firefox {
+//       color: #00f
+//     }
+//   }
+// }
+@mixin onlyFirefox() {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+// @desc - Chrome39以上を指定します（Chromium79以上とOpera26以上も対象）。
+// @example scss - Usage
+// .chrome {
+//   @include onlyChrome() {
+//     color: red;
+//     @include mq(md) {
+//       color: blue;
+//     }
+//   }
+// }
+// @example css - CSS output
+// _:lang(_), _::-internal-media-controls-overlay-cast-button, .chrome {
+//   color: red
+// }
+// @media print, screen and (min-width:48em) {
+//   _:lang(_), _::-internal-media-controls-overlay-cast-button, .chrome {
+//     color: #00f
+//   }
+// }
+@mixin onlyChrome() {
+  @at-root _:lang(_),
+    _::-internal-media-controls-overlay-cast-button,
+    & {
+    @content;
+  }
+}

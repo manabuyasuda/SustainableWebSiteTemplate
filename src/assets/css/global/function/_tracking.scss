@@ -1,0 +1,9 @@
+@use "sass:math";
+
+// @desc - Photoshop・XD・Figmaのトラッキングを指定します。
+// @param {Number} $value - デザインツールのトラッキング値（px）。
+// @example - tracking(40) => 0.04em
+// @example - tracking(40px) => Error: 0.04px*em isn't a valid CSS value.
+@function tracking($value) {
+  @return math.div($value, 1000) * 1em;
+}

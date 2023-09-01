@@ -1,0 +1,17 @@
+//- @param {Object} params
+//- @param {String} params.name [""] SVGスプライトのid名
+//-
+//- @examples Input
+//- +Icon({ name: "menu" })
+//- @examples Output
+//- <svg role="img">
+//-   <use href="/assets/svg/sprite.svg#menu"></use>
+//- </svg>
+mixin Icon(params={})
+  -
+    const props = Object.assign({
+      name: "",
+    }, params)
+
+  svg(role="img")&attributes(attributes)
+    use(href=`/assets/svg/sprite.svg#${props.name}`)

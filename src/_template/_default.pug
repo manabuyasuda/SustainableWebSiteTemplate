@@ -1,0 +1,19 @@
+block variables
+include /_mixin/_all
+
+doctype html
+html(lang=pageLocale)
+  head
+    include /_partial/_meta
+
+  body
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src=`https://www.googletagmanager.com/ns.html?id=${site.gtm}` height="0" width="0" style="display:none;visibility:hidden")
+    // End Google Tag Manager (noscript)
+
+    //- include /_partial/header
+
+    block content
+
+    //- include /_partial/footer

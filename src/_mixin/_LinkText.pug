@@ -1,0 +1,35 @@
+include ./_Icon
+
+//- @param {Object} params
+//- @param {String} params.href [""] href属性値
+//- @param {String} params.external [false] 別窓アイコン
+//-
+//- @examples Input
+//- +LinkText({ href: "#" }) デフォルトリンク
+//- @examples Output
+//- <a class="common-LinkText" href="#">デフォルトリンク</a>
+//-
+//- @examples Input
+//- +LinkText({ href: "#", external: true }) 外部リンク
+//- @examples Output
+//- <a class="common-LinkText" href="#" target="_blank">外部リンク
+//-   <svg class="common-Button_More" role="img">
+//-     <use xlink:href="/assets/svg/sprite.svg#win-blank"></use>
+//-   </svg>
+//- </a>
+mixin LinkText(params={})
+  -
+    const props = Object.assign({
+      href: "",
+      external: false,
+      color: "",
+    }, params)
+
+  a.common-LinkText(
+    href=props.href
+    target=props.external && "_blank"
+    class={[`-${props.color}`]: props.color}
+  )&attributes(attributes)
+    block
+    if props.external
+      +Icon({ name: "win-blank" }).common-LinkText_External

@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "_strip-unit";
+
+// @desc - pxをvwに変換します。
+// @param {Number} $px - 指定したいピクセル値。
+// @param {String} $width [375] -画面サイズのピクセル値。
+// @example - vw(30) => 8vw
+// @example - vw(60, 750) => 8vw
+@function vw($px, $width: 375) {
+  @return math.div(strip-unit.strip-unit($px), strip-unit.strip-unit($width)) * 100vw;
+}

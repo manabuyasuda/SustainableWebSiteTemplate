@@ -1,0 +1,50 @@
+meta(charset="UTF-8")
+meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+// Google Tag Manager
+script.
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',`#{site.gtm}`);
+// End Google Tag Manager
+
+title #{pageTitle}
+meta(name="description" content=pageDescription)
+if pageKeywords
+  meta(name="keywords" content=pageKeywords)
+
+block font
+  .
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+block css
+  link(rel="stylesheet" href="/assets/css/site.css")
+
+link(rel="canonical" href=site.url + pageAbsolutePath)
+
+meta(name="format-detection" content="telephone=no")
+
+meta(property="og:title" content=pageOgpTitle)
+meta(property="og:description" content=pageDescription)
+meta(property="og:type" content=pageOgpType)
+meta(property="og:image" content=site.url + pageOgpImage)
+meta(property="og:url" content=site.url + pageAbsolutePath)
+meta(property="og:site_name" content=site.name)
+meta(property="og:locale" content=pageLocale)
+
+if site.fbAppId
+  meta(property="fb:app_id" content=site.fbAppId)
+else if site.fbAdmins
+  meta(property="fb:admins" content=site.fbAdmins)
+
+if site.twitterCard
+  meta(name="twitter:card" content=site.twitterCard)
+if site.twitterSite
+  meta(name="twitter:site" content=site.twitterSite)
+
+block js
+  script(src="/assets/js/site.js" defer)

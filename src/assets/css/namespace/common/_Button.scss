@@ -1,0 +1,31 @@
+@use "../../global" as g;
+@use "../../components" as c;
+
+.common-Button {
+  @include c.Button;
+
+  border: 1px solid currentcolor;
+}
+
+.common-Button.-full {
+  width: 100%;
+  max-width: none;
+}
+
+.common-Button.-auto {
+  width: auto;
+  min-width: auto;
+}
+
+.common-Button.-large {
+  min-height: g.rem(70);
+  padding-top: g.rem(14);
+  padding-bottom: g.rem(14);
+  font-size: g.rem(17);
+  border-width: 2px;
+}
+
+.common-Button.-small {
+  padding: g.rem(12) g.rem(28) g.rem(11);
+  font-size: g.rem(13);
+}

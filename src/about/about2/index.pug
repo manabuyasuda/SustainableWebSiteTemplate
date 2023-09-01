@@ -1,0 +1,18 @@
+extend /_template/_default
+append variables
+  - const pageAbsolutePath = "/about/about2/"; // ページのルート相対パス（必須）
+  - const pageTitle= `アバウト2 | アバウト | ${site.title}`; // ページタイトル（必須）
+  - const pageDescription= site.description; // ページのメタディスクリプション（必須）
+  - const pageKeywords= site.keywords; // ページのメタキーワード（任意）
+  - const pageLocale= "ja"; // ページの言語（必須）
+  - const pageOgpType= "article"; // ページのOGPタイプ（必須）
+  - const pageOgpTitle= pageTitle; // ページのOGPタイトル（必須）
+  - const pageOgpImage= site.ogpImage; // ページのOGP画像（必須）
+
+block content
+  article
+    ul
+      each item in fooList.data
+        li
+          a.common-LinkText(href=item.url target=item.external && "_blank")
+            span !{item.text}

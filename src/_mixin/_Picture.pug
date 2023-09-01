@@ -1,0 +1,50 @@
+//- @param {Object} params
+//- @param {String} params.src [""] 画像パス
+//- @param {String} params.srcset [""] 画像のalt属性値
+//-
+//- @examples Input
+//- +Picture({ src: "https://placehold.jp/300x300.png", alt: "" })
+//-   +Picture_Source({ media: "lg", srcset: "https://placehold.jp/1000x1000.png" })
+//-   +Picture_Source({ media: "md", srcset: "https://placehold.jp/600x600.png" })
+//-
+//- @examples Output
+//- <picture>
+//-   <source media="(min-width: 1080px)" srcset="https://placehold.jp/1000x1000.png">
+//-   <source media="(min-width: 768px)" srcset="https://placehold.jp/600x600.png">
+//-   <img src="https://placehold.jp/300x300.png" alt="">
+//- </picture>
+mixin Picture(params={})
+  -
+    const props = Object.assign({
+      src : "",
+      alt: "",
+      }, params)
+  picture&attributes(attributes)
+    block
+    img(src=props.src alt=props.alt)
+
+//- @param {Object} params
+//- @param {String} params.media ["md"] メディアクエリのキーワード（`sm`,`md`,`lg`,`xl`,）
+//- @param {String} params.srcset [""] 画像パス
+//- 
+//- @examples Input
+//- +Picture_Source({ media: "lg", srcset: "https://placehold.jp/1000x1000.png" })
+//-
+//- @examples Output
+//- <source media="(min-width: 1080px)" srcset="https://placehold.jp/1000x1000.png">
+mixin Picture_Source(params={})
+  -
+    const props = Object.assign({
+      media : "md",
+      srcset: "",
+      }, params)
+
+  //- CSSのブレイクポイントに合わせて変数を設定してください。
+  -
+    var mediaQuery = {
+      xl: "(min-width: 1440px)",
+      lg: "(min-width: 1024px)",
+      md: "(min-width: 768px)",
+      sm: "(min-width: 375px)",
+    }
+  source(media=mediaQuery[props.media] src=props.srcset)

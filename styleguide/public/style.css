@@ -1,0 +1,9 @@
+/* Notesパネルのリガチャーなどを上書き */
+.Prose {
+  font-feature-settings: normal;
+  color: #000;
+}
+
+.Code pre {
+  font-family: consolas, menlo, courier, monospace;
+}

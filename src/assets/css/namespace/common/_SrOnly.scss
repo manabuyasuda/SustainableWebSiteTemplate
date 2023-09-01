@@ -1,0 +1,5 @@
+@use "../../global" as g;
+
+.common-SrOnly {
+  @include g.sr-only;
+}

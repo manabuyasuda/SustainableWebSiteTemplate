@@ -1,0 +1,65 @@
+@use "../../global" as g;
+
+.common-Br.-showSm {
+  display: none;
+
+  @include g.mq(sm) {
+    display: inline;
+  }
+}
+
+.common-Br.-showMd {
+  display: none;
+
+  @include g.mq(md) {
+    display: inline;
+  }
+}
+
+.common-Br.-showLg {
+  display: none;
+
+  @include g.mq(lg) {
+    display: inline;
+  }
+}
+
+.common-Br.-showXl {
+  display: none;
+
+  @include g.mq(xl) {
+    display: inline;
+  }
+}
+
+.common-Br.-hideSm {
+  display: inline;
+
+  @include g.mq(sm) {
+    display: none;
+  }
+}
+
+.common-Br.-hideMd {
+  display: inline;
+
+  @include g.mq(md) {
+    display: none;
+  }
+}
+
+.common-Br.-hideLg {
+  display: inline;
+
+  @include g.mq(lg) {
+    display: none;
+  }
+}
+
+.common-Br.-hideXl {
+  display: inline;
+
+  @include g.mq(xl) {
+    display: none;
+  }
+}

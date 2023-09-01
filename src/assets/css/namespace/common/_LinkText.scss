@@ -1,0 +1,17 @@
+@use "../../global" as g;
+@use "../../components" as c;
+
+.common-LinkText {
+  @include c.LinkText;
+}
+
+.common-LinkText_External {
+  position: relative;
+  top: 0.1em;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  min-width: 1em;
+  font-size: 1em;
+  fill: currentcolor;
+}

@@ -1,0 +1,13 @@
+{
+  "url": "https://example.com",
+  "name": "サイト名",
+  "title": "サイトのタイトル",
+  "description": "サイトの説明文",
+  "keywords": "キーワード1,キーワード2,キーワード3",
+  "ogpImage": "/ogp.png",
+  "fbAppId": "iiiiiiiiiiiiiii",
+  "fbAdmins": "aaaaaaaaaaaaaaa",
+  "twitterCard": "summary_large_image",
+  "twitterSite": "@account_name",
+  "gtm": "GTM-XXXXXX"
+}

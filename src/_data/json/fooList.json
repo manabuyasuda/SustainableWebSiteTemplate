@@ -1,0 +1,6 @@
+{
+  "data": [
+    { "id": "dummy1", "text": "テキスト1", "url": "/dummy1/", "external": true },
+    { "id": "dummy2", "text": "テキスト2", "url": "/dummy2/", "external": false }
+  ]
+}

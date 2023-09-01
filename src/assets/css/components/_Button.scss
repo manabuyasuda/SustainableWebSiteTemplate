@@ -1,0 +1,58 @@
+@use "../global" as g;
+
+@mixin Button() {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: g.rem(15) g.rem(44) g.rem(14);
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: g.rem(15);
+  line-height: div(21, 15);
+  border: 1px solid transparent;
+  border-radius: g.rem(999);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition-timing-function: g.$ease;
+  transition-duration: 0.3s;
+  appearance: none;
+
+  &[type="button"],
+  &[type="reset"],
+  &[type="submit"] {
+    appearance: none;
+  }
+
+  &.-disabled {
+    pointer-events: none;
+  }
+
+  &:disabled,
+  &.-disabled,
+  &:disabled:hover,
+  &.-disabled:hover {
+    border-color: #9e9e9e !important;
+    background: none !important;
+    background-color: #9e9e9e !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    opacity: 1 !important;
+    cursor: not-allowed !important;
+  }
+
+  [data-whatintent="keyboard"] &:focus {
+    outline-width: 0;
+    box-shadow: 0 0 6px 3px #1589ee;
+  }
+
+  [data-whatintent="mouse"] &:focus,
+  [data-whatintent="touch"] &:focus {
+    outline-width: 0;
+    box-shadow: none;
+  }
+}
