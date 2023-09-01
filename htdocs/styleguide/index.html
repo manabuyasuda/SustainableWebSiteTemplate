@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="./themes/mandelbrot/favicon.ico" type="image/ico">
+<style>
+    :root {
+        
+        
+        
+    }
+</style>
+
+<link rel="stylesheet" href="./themes/mandelbrot/css/olive.css?cachebust=1.10.3" type="text/css">
+
+<link rel="stylesheet" href="./themes/mandelbrot/css/styleguide.css?cachebust=1.10.3" type="text/css">
+
+<link rel="stylesheet" href="./themes/mandelbrot/css/highlight.css?cachebust=1.10.3" type="text/css">
+
+
+<title>スタイルガイド | Styleguide</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <div class="Header-navToggleIcon Header-navToggleIcon--open">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </div>
+        <div class="Header-navToggleIcon Header-navToggleIcon--closed">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+        </div>
+    </button>
+    <a href="./index.html" class="Header-title" data-pjax>Styleguide</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">スタイルガイド</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="Prose">
+
+
+
+    
+    
+    <h2 id="category">category</h2>
+<p>GlobalやHeadingのようなコンポーネントの分類です。<br>コンポーネントをこの分類で分けて一覧化（スクリーンショットを撮ってリストアップ）することで、似たようなコンポーネントを統合したり、コンポーネントごとの仕様を確認してください。</p>
+<ul>
+<li>Global：ヘッダーやフッターのようなサイト全体で使われる要素</li>
+<li>Layout：グリッドやコンポーネントの余白指定などのレイアウトパターン</li>
+<li>Navigation：メインナビゲーションやフッターのナビゲーション、ページネーションやパンくずリストなどのユーザーを誘導することが目的とする要素</li>
+<li>BaseModule：比較的小さなコンポーネントで、Layoutコンポーネントとセットで使うものと、後述するBlockModuleの中で使用するスタイルのベースになるものがあります。<ul>
+<li>Image：ロゴやメインビジュアル、アバターやサムネイルや背景画像などの画像</li>
+<li>Icon：用途やカテゴリーを端的に示す画像です。虫眼鏡、ソーシャルアイコン、矢印、ハンバーガーなどです。</li>
+<li>Form：入力エリア、Selectメニュー、チェックボックス、ラジオボタンのような、ユーザーが操作するフォーム要素</li>
+<li>Button：オンオフやページ遷移、表示や非表示といった操作の切り替えに使われる要素</li>
+<li>Heading：ページタイトルや見出し</li>
+<li>Text：文章やラベルのようなテキスト要素</li>
+<li>Link：テキストリンク</li>
+<li>List：順序付きや定義リストなどのHTMLで定義されているリスト要素や、一覧や表といった形式であらわされている要素</li>
+<li>Media：ビデオやオーディオのようなリッチメディア要素</li>
+</ul>
+</li>
+<li>BlockModule：BaseModuleのような小さなコンポーネントを集めた、一定のパターンを持っているモジュールです。1つのコンポーネントとして定義することで、個別に仕様変更の対応ができるようにしておきます。<ul>
+<li>Block：見出しや画像、テキストなどが1つのまとめりになっているエリア</li>
+<li>InteractiveComponent：アコーディオン、タブ、カルーセル、オフキャンバスのようなユーザーの操作で稼働する要素</li>
+<li>Messaging：警告メッセージ、エラーメッセージ、ローディング、ポップアップのようなユーザーに何らかのメッセージを伝える要素</li>
+</ul>
+</li>
+<li>ThirdPartyComponent：サイト製作者側がすべてをコントロールすることができないサービス</li>
+<li>Advertising：広告</li>
+</ul>
+<h2 id="namespace">namespace</h2>
+<p>クラス名の接頭辞で、どの範囲で使われるかという影響度を示します。<br>以下はデフォルトで用意しているものです。サイトの構造によって変更してください。</p>
+<ul>
+<li><code>.sw-</code> (SiteWide)：サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）</li>
+<li><code>.st-</code> (Structure)：サイト共通の構造的なModule（ヘッダーやフッターのような場所が固定されるもの）</li>
+<li><code>.l-</code> (Layout)：コンテンツ内の余白やレイアウト専用のModule</li>
+<li><code>.wisywig-</code> (WISYWIG)：WISYWIG（ウィジウィグ）で入力した要素に対するスタイル</li>
+<li><code>.home-</code> (HomePage)：ホームページ（サイトトップページ）</li>
+<li><code>.top-</code> (TopPage)：カテゴリートップページ</li>
+<li><code>.sub-</code> (SubPage)：カテゴリー下層ページ</li>
+<li><code>.products-</code> (Products)：製品情報</li>
+<li><code>.news-</code> (News)：ニュース</li>
+<li><code>.company-</code> (Company)：会社案内・企業情報</li>
+<li><code>.recruit-</code> (Recruit)：採用情報ページ</li>
+<li><code>.csr-</code> (CorporateSocialResponsibility)：企業の社会的責任</li>
+<li><code>.faq-</code> (FrequentlyAskedQuestions)：よくある質問</li>
+<li><code>.inquiry-</code> (Inquiry)：お問い合わせ</li>
+<li><code>.ir-</code> (InvestorRelations)：投資家向け情報</li>
+<li><code>.results-</code> (Results)：検索結果ページ</li>
+<li><code>.sitemap-</code> (Sitemap)：サイトマップページ</li>
+</ul>
+
+    
+
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            
+
+
+<nav class="Navigation" data-behaviour="navigation">
+    <div class="Navigation-panel Navigation-panel--main" data-role="main-panel">
+    
+        <div class="Navigation-group Navigation-search">
+    <form action="" class="Search" data-behaviour="search">
+        <label class="Search-label" for="search-input">Search</label>
+        <input class="Search-input" id="search-input" type="search" placeholder="Search…" data-role="input" autocomplete="off">
+        <button type="button" data-behaviour="clear-search" class="Search-clearButton" aria-label="Clear search" hidden>
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </button>
+    </form>
+</div>
+
+    
+        
+
+    
+    
+    <div class="Navigation-group">
+        
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <div class="Tree-header">
+        <h3 class="Tree-title">components</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-common">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-common-items">
+                    Common
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-common-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./components/detail/br.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="br"
+                data-handle="br"
+            >
+                <span>Br</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./components/detail/delimiter.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="delimiter"
+                data-handle="delimiter"
+            >
+                <span>Delimiter</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-link-text">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-link-text-items">
+                    Link Text
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-link-text-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./components/detail/link-text--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link-text--default"
+                data-handle="link-text--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./components/detail/link-text--external.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="link-text--external"
+                data-handle="link-text--external"
+            >
+                <span>External</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+    </ul>
+</div>
+
+    </div>
+    
+
+
+    
+        
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <div class="Tree-header">
+        <h3 class="Tree-title">documentation</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./index.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="index"
+                data-handle="index"
+            >
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+    
+    </div>
+
+    
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="./themes/mandelbrot/js/mandelbrot.js?cachebust=1.10.3"></script>
+
+
+
+</body>
+</html>

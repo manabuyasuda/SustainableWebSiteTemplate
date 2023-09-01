@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs/><symbol id="arrow-right" viewBox="0 0 24 24">
+  <rect id="&#x9577;&#x65B9;&#x5F62;_1053" data-name="&#x9577;&#x65B9;&#x5F62; 1053" width="24" height="24" fill="#fff" opacity="0"/>
+  <path id="ic_keyboard_arrow_right_24px" d="M8.59,25.165l8.653-8.415L8.59,8.335,11.254,5.75l11.336,11-11.336,11Z" transform="translate(-3.59 -4.75)"/>
+</symbol><symbol id="win-blank" viewBox="0 0 24 24">
+  <g>
+    <path d="M4,20H17V7H4ZM5.8,8.8h9.4v9.4H5.8Z"/>
+    <polygon points="10.001 3 10.001 4.8 19.201 4.8 19.201 14 21.001 14 21.001 3 10.001 3"/>
+  </g>
+</symbol></svg>
