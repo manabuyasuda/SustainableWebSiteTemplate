@@ -608,7 +608,7 @@ select:not([disabled]):focus {
   text-decoration: none;
   font-family: inherit;
   font-size: 0.9375rem;
-  line-height: div(21, 15);
+  line-height: 1.4;
   border: 1px solid transparent;
   border-radius: 62.4375rem;
   background: transparent;
