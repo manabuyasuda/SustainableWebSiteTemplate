@@ -15,7 +15,7 @@
     "watch:styleguide": "onchange \"styleguide/**/*\" -- npm run dev:styleguide",
     "watch:copy": "cpx \"static/**/*\" htdocs --verbose --watch",
     "watch:serve": "browser-sync start --config \"./bs-config.js\"",
-    "dev": "npm-run-all -p dev:*",
+    "dev": "run-p dev:*",
     "dev:html": "NODE_ENV=development run-s -c html:*",
     "dev:css": "NODE_ENV=development run-s -c -c css:*",
     "dev:js": "NODE_ENV=development run-s -c js:*",
