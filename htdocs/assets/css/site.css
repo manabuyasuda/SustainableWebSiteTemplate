@@ -43,8 +43,7 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box; /* 1 */
+  box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -213,8 +212,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; /* 1 */
+  box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
@@ -242,8 +240,7 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; /* 1 */
+  box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
@@ -320,16 +317,14 @@ template {
  * 2. ドキュメントのルートフォントサイズを指定します（`rem`で参照）。
  */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; /* 1 */
+  box-sizing: border-box; /* 1 */
   font-size: 100%; /* 2 */
 }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; /* 1 */
+  box-sizing: inherit; /* 1 */
 }
 
 /**
@@ -343,8 +338,7 @@ body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", meiryo, sans-serif;
   background-color: #fff;
   color: #000;
-  -webkit-font-kerning: normal;
-          font-kerning: normal; /* 2 */
+  font-kerning: normal; /* 2 */
   -webkit-font-smoothing: subpixel-antialiased; /* 3 */
   -moz-osx-font-smoothing: auto; /* 3 */
 }
@@ -488,8 +482,7 @@ html[data-whatintent=keyboard] input[type=text]:not([disabled]):focus,
 html[data-whatintent=keyboard] input[type=radio]:not([disabled]):focus,
 html[data-whatintent=keyboard] input[type=checkbox]:not([disabled]):focus,
 html[data-whatintent=keyboard] select:not([disabled]):focus {
-  -webkit-box-shadow: 0 0 6px 3px #1589ee;
-          box-shadow: 0 0 6px 3px #1589ee;
+  box-shadow: 0 0 6px 3px #1589ee;
 }
 a[href]:not([disabled]):focus,
 button:not([disabled]):focus,
@@ -509,12 +502,9 @@ select:not([disabled]):focus {
   *,
   *::before,
   *::after {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
-    -webkit-transition-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -591,15 +581,9 @@ select:not([disabled]):focus {
 }
 
 .common-Button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   position: relative;
   max-width: 100%;
   margin: 0;
@@ -614,10 +598,8 @@ select:not([disabled]):focus {
   background: transparent;
   color: inherit;
   cursor: pointer;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-          transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-duration: 0.3s;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -635,21 +617,18 @@ select:not([disabled]):focus {
   border-color: #9e9e9e !important;
   background: none !important;
   background-color: #9e9e9e !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   color: #fff !important;
   opacity: 1 !important;
   cursor: not-allowed !important;
 }
 [data-whatintent=keyboard] .common-Button:focus {
   outline-width: 0;
-  -webkit-box-shadow: 0 0 6px 3px #1589ee;
-          box-shadow: 0 0 6px 3px #1589ee;
+  box-shadow: 0 0 6px 3px #1589ee;
 }
 [data-whatintent=mouse] .common-Button:focus, [data-whatintent=touch] .common-Button:focus {
   outline-width: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .common-Button.-full {
